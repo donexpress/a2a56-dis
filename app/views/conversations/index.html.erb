@@ -37,11 +37,9 @@
       <div class="flex">
         <%= form.submit "Search", class: 'bg-[#009588] shadow-sm text-slate-50 p-2 rounded-md cursor-pointer mr-2' %>
       </div>
-      <%  if @date.present? %>
       <div class="flex">
         <%= link_to "Download as Excel", export_excel_path(format: :xlsx, date: params[:date], sort: params[:sort]), class: 'bg-[#009588] shadow-sm text-slate-50 p-2 rounded-md cursor-pointer' %>
       </div>
-        <% end %>         
       <% end %>
     </div>
     <%= render partial:"conversations/pagination", date: @date, q: @q, tz: "America/Mexico_City", page: @page, sort: @sort, total_count: @total_count %>
